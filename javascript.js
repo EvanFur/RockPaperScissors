@@ -1,53 +1,53 @@
-console.log("Hello World")
-
 function getComputerChoice() {
     let result = Math.random() * 100;
     let computerChoice;
 
     if (result <= 33) {
-        computerChoice = "rock"
+        computerChoice = "rock";
     } else if (result > 33 && result < 66) {
-        computerChoice = "paper"
+        computerChoice = "paper";
     } else if (result >= 66) {
-        computerChoice = "scissors"
+        computerChoice = "scissors";
     }
 
-    return computerChoice
+    return computerChoice;
 }
 
 function getHumanChoice() {
     let humanChoice = prompt("What's your choice?").toLowerCase()
-
-    if (humanChoice === "rock") {
-        humanChoice = "rock"
-    } else if (humanChoice === "paper"){
-        humanChoice = "paper"
-    } else if (humanChoice === "scissors") {
-        humanChoice = "scissors"
+    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+        return humanChoice;
     }
 
 }
 
-let computerChoice = getComputerChoice()
-let humanChoice = getHumanChoice()
 let computerScore = 0
 let humanScore = 0
 
-if (humanChoice === computerChoice) {
-    print(Draw!)
-} else if (humanChoice === "rock" && computerChoice === "paper") {
-    computerScore = 1+
-} else if (humanChoice === "rock" && computerChoice === "scissors") {
-    humanScore = 1+
-} else if (humanChoice === "paper" && computerChoice === "rock") {
-    humanScore = 1+
-} else if (humanChoice === "paper" && computerChoice === "scissors") {
-    computerScore = 1+
-} else if (humanChoice === "scissors" && computerChoice === "paper") {
-    humanScore = 1+
-} else if (humanChoice === "scissors" && computerChoice === "rock") {
-    computerScore = 1+
-}
+function playRound() {
+    let computerChoice = getComputerChoice()
+    let humanChoice = getHumanChoice()
+    let result;
+
+    if (humanChoice === computerChoice) {
+        result = "draw";
+
+        } else if (
+            (humanChoice === "rock" && computerChoice === "scissors") || 
+            (humanChoice === "paper" && computerChoice === "rock") ||
+            (humanChoice === "scissors" && computerChoice === "paper")
+        ) { 
+            humanScore++;
+            result = "Player Wins!";
+
+        } else {
+            computerScore++;
+            result = "CPU Wins!";
+        }
+        console.log(result)
+        console.log(humanScore)
+        console.log(computerScore)
+    }
 
 
-
+playRound();
