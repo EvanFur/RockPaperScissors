@@ -49,5 +49,11 @@ function playRound() {
         console.log(computerScore)
     }
 
+function playGame() {
+    for (let round = 1; round <= 5; round++) {
+        console.log(`Round ${round}`);
+        playRound();
+    }
+}
 
-playRound();
+playGame()
